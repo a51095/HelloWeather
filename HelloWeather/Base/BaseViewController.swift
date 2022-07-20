@@ -9,14 +9,14 @@ import UIKit
 
 class BaseViewController: UIViewController, NetworkStatusProtocol {
     
-    /// 自定义顶部视图(默认白色背景色)
+    /// barView
     public lazy var barView: UIView = {
         let v = UIView()
         v.backgroundColor = .white
         return v
     }()
     
-    /// 自定义返回按钮(默认黑色)
+    /// backButton
     public lazy var backButton: UIButton = {
         let b = UIButton()
         b.setImage(R.image.vc_back_black(), for: .normal)
@@ -32,18 +32,18 @@ class BaseViewController: UIViewController, NetworkStatusProtocol {
         self.setBackgroundColor()
     }
     
-    /// Data初始化(一个空的数据初始化方法,子类可继承重写)
+    /// initData
     public func initData() { }
     
-    /// UI初始化(一个空的控件初始化方法,子类可继承重写)
+    /// setUI
     public func setUI() { }
     
-    /// 设置视图控制器背景色(默认白色)
+    /// setBackgroundColor
     public func setBackgroundColor() {
         view.backgroundColor = .white
     }
     
-    /// 添加自定义顶部视图(默认白色背景色)
+    /// addBarView
     public func addBarView() {
         let autoH = kSafeMarginTop(44)
         view.addSubview(barView)
@@ -53,7 +53,7 @@ class BaseViewController: UIViewController, NetworkStatusProtocol {
         }
     }
     
-    /// 添加自定义返回按钮(默认黑色)
+    /// addBackButton
     public func addBackButton() {
         if barView.superview != nil {
             barView.addSubview(backButton)
@@ -68,7 +68,7 @@ class BaseViewController: UIViewController, NetworkStatusProtocol {
         }
     }
     
-    /// 自定义返回按钮事件
+    /// backButtonDidSeleted
     @objc func backButtonDidSeleted() {
         if self.navigationController?.visibleViewController != nil {
             self.navigationController?.popViewController(animated: true)

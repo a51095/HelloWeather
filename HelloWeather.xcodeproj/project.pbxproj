@@ -18,7 +18,6 @@
 		883CCD152886C3C6000E117F /* ExColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CCD0C2886C3C6000E117F /* ExColor.swift */; };
 		883CCD172886C3C6000E117F /* ExDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CCD0E2886C3C6000E117F /* ExDictionary.swift */; };
 		883CCD192886C3C6000E117F /* ExFixedWidthInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CCD102886C3C6000E117F /* ExFixedWidthInteger.swift */; };
-		883CCD1A2886C3C6000E117F /* ExImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CCD112886C3C6000E117F /* ExImage.swift */; };
 		883CCD1C2886C3C6000E117F /* ExObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CCD132886C3C6000E117F /* ExObject.swift */; };
 		883CCD2E2886C416000E117F /* ExLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CCD202886C416000E117F /* ExLoadingView.swift */; };
 		883CCD2F2886C416000E117F /* ExToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CCD212886C416000E117F /* ExToastView.swift */; };
@@ -46,7 +45,6 @@
 		883CCD0C2886C3C6000E117F /* ExColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExColor.swift; sourceTree = "<group>"; };
 		883CCD0E2886C3C6000E117F /* ExDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExDictionary.swift; sourceTree = "<group>"; };
 		883CCD102886C3C6000E117F /* ExFixedWidthInteger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExFixedWidthInteger.swift; sourceTree = "<group>"; };
-		883CCD112886C3C6000E117F /* ExImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExImage.swift; sourceTree = "<group>"; };
 		883CCD132886C3C6000E117F /* ExObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExObject.swift; sourceTree = "<group>"; };
 		883CCD202886C416000E117F /* ExLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExLoadingView.swift; sourceTree = "<group>"; };
 		883CCD212886C416000E117F /* ExToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExToastView.swift; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				883CCD0C2886C3C6000E117F /* ExColor.swift */,
-				883CCD112886C3C6000E117F /* ExImage.swift */,
 				883CCD132886C3C6000E117F /* ExObject.swift */,
 				883CCD0E2886C3C6000E117F /* ExDictionary.swift */,
 				883CCD102886C3C6000E117F /* ExFixedWidthInteger.swift */,
@@ -371,7 +368,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				883CCD5A28870B37000E117F /* CityModel.swift in Sources */,
-				883CCD1A2886C3C6000E117F /* ExImage.swift in Sources */,
 				883CCCF12886BF0F000E117F /* WeatherViewController.swift in Sources */,
 				883CCD012886C089000E117F /* ExAppDelegate.swift in Sources */,
 				883CCD142886C3C6000E117F /* ExBinaryFloatingPoint.swift in Sources */,

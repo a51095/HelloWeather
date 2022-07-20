@@ -5,12 +5,11 @@
 //
 
 public extension Dictionary {
-    /// 合并当前字典对象键值对
+    /// merge dictionary
     mutating func merge(dict: [Key: Value]) {
         for (k, v) in dict { updateValue(v, forKey: k) }
     }
     
-    /// 字典转JSON数据(参数为格式美化,默认false)
     func jsonData(prettify: Bool = false) -> Data? {
         guard JSONSerialization.isValidJSONObject(self) else { return nil }
         let options = (prettify == true) ? JSONSerialization.WritingOptions.prettyPrinted : JSONSerialization
@@ -18,7 +17,6 @@ public extension Dictionary {
         return try? JSONSerialization.data(withJSONObject: self, options: options)
     }
     
-    /// 字典转JSON字符串(参数为格式美化,默认false)
     func jsonString(prettify: Bool = false) -> String? {
         guard JSONSerialization.isValidJSONObject(self) else { return nil }
         let options = (prettify == true) ? JSONSerialization.WritingOptions.prettyPrinted : JSONSerialization

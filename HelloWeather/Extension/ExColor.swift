@@ -5,10 +5,9 @@
 //
 
 public extension UIColor {
-    /// App主色调
+
     class var main: UIColor { .hexColor("#FFD700") }
     
-    /// 随机颜色
     class var random: UIColor {
         rgb(Int(arc4random_uniform(256)), Int(arc4random_uniform(256)), Int(arc4random_uniform(256)))
     }
@@ -24,7 +23,6 @@ public extension UIColor {
         return rgb(red, green, blue, alpha)
     }
     
-    /// 16进制颜色值
     static func hexColor(_ hexString: String, _ alpha: CGFloat = 1) -> UIColor {
         var string = ""
         let lowercaseHexString = hexString.lowercased()

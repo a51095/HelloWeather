@@ -5,10 +5,10 @@
 //
 
 struct AppURL {
-    /// 天气API
+    /// Weather API
     static let baseURL: String = "https://api.openweathermap.org/data/2.5/weather?"
     
-    /// 天气图标
+    /// Weather icon
     static let iconURL: String = "http://openweathermap.org/img/wn/"
     
 }

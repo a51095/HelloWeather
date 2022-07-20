@@ -4,19 +4,14 @@
 //
 //
 
-/**
- * CCToastView
- * 吐司弹框视图
- * 支持消失时间长短,文字自定义
- **/
 
 public enum ToastType { case nore, success, failure }
 
 final class CCToastView: UIView {
     var limitTop: CGFloat = 20
-    /// 懒加载icon控件对象
+    /// lazy iconImageView
     private lazy var iconImageView: UIImageView = { UIImageView() }()
-    /// 懒加载message控件对象
+    /// lazy messageLabel
     private lazy var messageLabel: UILabel = {
         let message = UILabel()
         message.numberOfLines = 0
@@ -30,10 +25,10 @@ final class CCToastView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - 反初始化器
+    // MARK: - deinit
     deinit { print("CCToastView deinit~") }
     
-    // MARK: - 初始化器
+    // MARK: - init
     init(_ title: String, type: ToastType = .nore) {
         super.init(frame: .zero)
         
@@ -66,11 +61,11 @@ final class CCToastView: UIView {
 }
 
 extension UIView {
-    /// 吐司效果
+    
     func toast(_ message: String, type: ToastType = .nore, duration: TimeInterval = 2)  {
-        // 容错处理,若message字段无内容,则直接返回
+        
         guard !message.isEmpty else { return }
-        // 若当前视图已加载CCToastView,则直接返回,不再二次添加;
+        
         if let lastView = subviews.last as? CCToastView { lastView.removeFromSuperview() }
         
         let toastView = CCToastView(message, type: type)

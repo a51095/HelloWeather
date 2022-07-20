@@ -31,9 +31,10 @@ class WeatherViewController: BaseViewController, UITableViewDelegate, UITableVie
     }
     
     override func initData()  {
-        // test
+        // test city
 //        cityArray = ["shanghai", "beijing", "shenyang", "shenzhen", "dalian"]
         
+        // task city
         cityArray = ["Gothenburg", "Stockholm", "London", "New York", "Berlin"]
         
         for ele in self.cityArray {
@@ -54,19 +55,19 @@ class WeatherViewController: BaseViewController, UITableViewDelegate, UITableVie
         
         let params = ["q": name] as [String : Any]
         
-        NetworkRequest(url: AppURL.baseURL, method: .get, params: params) { res in
+        NetworkRequest(url: AppURL.baseURL, method: .get, params: params) { [weak self] res in
             
-            guard let self = self, res.resCode > 0 else { self.weatherTableView.hideLoading(); return }
+            guard res.resCode > 0 else { return }
             
             if let dic = res.data, let weather = dic["weather"] as? [[String: Any]] {
                 for item in weather {
                     let model = WeatherModel.deserialize(from: item)
                     let cityModel = CityModel(name: name, weatherModel: model)
-                    self.cityData.append(cityModel)
+                    self?.cityData.append(cityModel)
                 }
             }
             
-            self.weatherTableView.reloadData()
+            self?.weatherTableView.reloadData()
             
         }
     }

@@ -5,15 +5,15 @@
 //
 
 public extension FixedWidthInteger {
-    /// 整型转Float
+    /// Int to Float
     var f: Float { Float(self) }
     
-    /// 整型转CGFloat
+    /// Int to CGFloat
     var cgf: CGFloat { CGFloat(self) }
     
-    /// 整型转Double
+    /// Int to Double
     var d: Double { Double(self) }
     
-    /// 整型转String
+    /// Int to String
     var str: String { String(format: "\(self)" ) }
 }

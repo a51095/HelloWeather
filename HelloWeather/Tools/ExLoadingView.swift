@@ -4,14 +4,9 @@
 //
 //
 
-/**
- * ExLoadingView
- * Loading加载视图
- * 支持文字显示
- **/
 
 final class ExLoadingView: UIView {
-    /// 懒加载,提示label
+    /// lazy messageLabel
     private lazy var messageLabel: UILabel = {
         let l = UILabel()
         l.textColor = .white
@@ -24,10 +19,10 @@ final class ExLoadingView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - 反初始化器
+    // MARK: - deinit
     deinit { print("CCLoadingView deinit~") }
     
-    // MARK: - 初始化器
+    // MARK: - init
     init(toast: String) {
         super.init(frame: .zero)
         
@@ -40,20 +35,20 @@ final class ExLoadingView: UIView {
         contentView.addSubview(activity)
         
         if !toast.isEmpty {
-            // 中间内容视图
+            // contentView
             contentView.snp.makeConstraints { (make) in
                 make.center.equalToSuperview()
                 make.size.equalTo(CGSize(width: 120, height: 100))
             }
             
-            // 加载转圈视图
+            // activity
             activity.snp.makeConstraints { (make) in
                 make.top.equalTo(16)
                 make.centerX.equalToSuperview()
                 make.size.equalTo(CGSize(width: 37, height: 37))
             }
             
-            // 文字提示视图
+            // messageLabel
             messageLabel.text = toast
             addSubview(messageLabel)
             messageLabel.snp.makeConstraints { (make) in
@@ -62,13 +57,13 @@ final class ExLoadingView: UIView {
                 make.size.equalTo(CGSize(width: 120, height: 36))
             }
         }else {
-            // 中间内容视图
+            // contentView
             contentView.snp.makeConstraints { (make) in
                 make.center.equalToSuperview()
                 make.size.equalTo(CGSize(width: 100, height: 100))
             }
             
-            // 加载转圈视图
+            // activity
             activity.snp.makeConstraints { (make) in
                 make.center.equalToSuperview()
             }
@@ -78,9 +73,9 @@ final class ExLoadingView: UIView {
 }
 
 extension UIView {
-    /// 展示loading框(主线程中刷新UI)
+    
     func showLoading(_ message: String = "") {
-        // 若当前视图已加载CCLoadingView,则直接返回,不再二次添加;
+        
         if let lastView = subviews.last as? ExLoadingView { lastView.removeFromSuperview() }
         
         let loadingView = ExLoadingView(toast: message)
@@ -91,7 +86,6 @@ extension UIView {
         }
     }
     
-    /// 隐藏loading框(主线程中刷新UI)
     func hideLoading() {
         for item in subviews {
             if item.isKind(of: ExLoadingView.self) {

@@ -8,13 +8,13 @@ import UIKit
 import Foundation
 
 class CityCell: UITableViewCell {
-    /// 城市名称
+    /// city name
     private var cityLabel = UILabel()
-    /// 天气图标
+    /// weather icon
     private var iconImageView = UIImageView()
-    /// 天气状态
+    /// weather condition
     private var mainLabel = UILabel()
-    /// 天气描述
+    /// weather description
     private var desLabel = UILabel()
     
     required init?(coder: NSCoder) {
@@ -26,7 +26,6 @@ class CityCell: UITableViewCell {
         self.setUI()
     }
     
-    // MARK: - UI初始化
     func setUI() {
         selectionStyle = .none
         

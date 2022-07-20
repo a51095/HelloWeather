@@ -188,9 +188,9 @@
 		883CCD442886C7F7000E117F /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				883CCD522886D135000E117F /* ExResource.swift */,
 				883CCD452886C7F7000E117F /* AppURL.swift */,
 				883CCD482886C7F7000E117F /* AppKeys.swift */,
+				883CCD522886D135000E117F /* ExResource.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -340,7 +340,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/HelloWeather/Config/ExResource.swift",
+				$SRCROOT/HelloWeather/Config/ExResource.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
